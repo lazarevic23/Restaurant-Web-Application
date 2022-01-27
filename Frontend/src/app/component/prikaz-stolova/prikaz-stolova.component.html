@@ -1,0 +1,18 @@
+<app-meni-bar></app-meni-bar>
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+      <div class="col col-lg-4 col-md-6 col-sm-10 col-10">
+        <div class="alert alert-light" *ngFor = "let i = index; let stocic of listaStolova">
+          <h4 class="list-group-item-text">Broj stola: {{stocic.brojStola}}</h4>
+          <h4 class="list-group-item-text">Broj mesta: {{stocic.brojMesta}}</h4>
+          <button  *ngIf = "vidiRegistrovani" (click) = "RezervisiSto(stocic.id)"  class="btn btn-success" > Rezerviši sto</button>
+          <button *ngIf = "vidiAdmin" (click) = "ObrisiSto(stocic.id)" class="btn btn-success" >Obriši sto</button>
+          <button  *ngIf = "vidiAdmin" (click) = "IzmeniSto(stocic.id)"  class="btn btn-success"  >Izmeni sto</button>
+        </div>
+      </div>
+      <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<app-meni-bar></app-meni-bar>
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+      <div class="col col-lg-4 col-md-6 col-sm-10 col-10">
+        <div class="alert alert-light" *ngFor = "let i = index; let restorancic of restorani"> 
+          <h4 class="list-group-item-text">Naziv restorana: {{restorancic.naziv}}</h4>
+          <h4 class="list-group-item-text">Adresa restorana: {{restorancic.adresa}}</h4>
+          <h4 class="list-group-item-text">Kontakt restorana: {{restorancic.kontakt}}</h4>
+          <img class="group list-group-image img-fluid" style="width: 250px; height: 150px;" src="assets/A{{i+1}}.jpg" alt="nece" />
+          <p>
+            <button (click)="VidiStolove(restorancic.id)"  class="btn btn-success"> Prikazi stolove</button>
+            <button *ngIf="vidiAdmin" (click)="kreirajSto(restorancic.id)" class="btn btn-success">Kreiraj sto</button>
+            <button *ngIf="vidiAdmin" (click)="ObrisiRestoran(restorancic.id)" class="btn btn-success">Obriši restoran</button>
+            <button *ngIf="vidiAdmin" (click)="IzmeniRestoran(restorancic.id)" class="btn btn-success">Izmeni restoran</button>
+          </p>
+          <div>
+            <rating *ngIf="vidiRegistrovani" (click)="oceniServis(restorancic, listaOcena[i])" [(ngModel)]="listaOcena[i].ocena"></rating>
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+    </div>
+  </div>
+</div>
+

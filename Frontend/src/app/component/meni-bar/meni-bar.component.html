@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Restaurant</a>
+  <button class="navbar-toggler" (click)="toggleMenubar()" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': menubarPrikazan }">
+    <ul class="nav navbar-nav mr-auto">
+      <li class="navbar-item active">
+        <a class="nav-link" [routerLink] = "['/restorani']">Prikaži restorane</a>
+      </li>
+      <li class="navbar-item active" *ngIf = "vidiAdmin">
+        <a class="nav-link"  [routerLink] = "['/dodavanjeRestorana']">Kreiraj restoran</a>
+      </li>
+      <li class="navbar-item active" *ngIf="vidiRegistrovani">
+        <a class="nav-link" [routerLink] = "['/otkazivanje']">Moje rezervacije</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+     <li class="navbar-item active">
+       <a class="nav-link" [routerLink]="['/registracija']">
+        <span class="fa fa-user-circle-o" aria-hidden="true"></span> 
+        Registracija 
+      </a>
+      </li>
+      <li class="navbar-item active">
+        <a class="nav-link" [routerLink]="['/login']">
+          <span class="fa fa-sign-in"></span> 
+          Prijava 
+        </a>
+      </li>
+      <li class="navbar-item active" *ngIf="sakrijOdjavise">
+        <a class="nav-link" (click)="odjaviSe()">
+          <span class="fa fa-sign-out"></span> 
+          Odjava 
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+  
+ 
+  
+
+  
+  

@@ -1,0 +1,17 @@
+<app-meni-bar></app-meni-bar>
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+        <div class="col col-lg-4 col-md-6 col-sm-10 col-10">
+          <div class="alert alert-light" *ngFor="let i = index; let rezervacije of listaRezervacija"> 
+            <h4 class="list-group-item-text">Naziv restorana: {{rezervacije.restoran.naziv}}</h4> 
+            <h4 class="list-group-item-text">Broj stola: {{rezervacije.rezervisanSto.brojStola}}</h4>
+            <h4 class="list-group-item-text">Vreme rezervacije: {{rezervacije.vremeRezervacije}}</h4>
+            <button (click)="Otkazi(rezervacije.id)" class="btn btn-success">Otkaži rezervaciju</button>
+          </div>
+        </div>
+        <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+    </div>
+  </div>
+</div>

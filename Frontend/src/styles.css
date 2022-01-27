@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url(./assets/chairs-menu-restaurant-6267.jpg);
+    overflow: hidden;
+}

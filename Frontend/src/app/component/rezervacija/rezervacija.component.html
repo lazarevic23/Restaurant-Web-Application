@@ -1,0 +1,24 @@
+<app-meni-bar></app-meni-bar>
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+        <div class="col col-lg-4 col-md-6 col-sm-10 col-10">
+          <div class="form">
+            <div class="form-area">  
+              <form role="form"  #formPredmet="ngForm">
+                <h3 style="margin-bottom: 25px; text-align: center;">Rezervacija</h3>
+                <div class="form-group">
+                  <label>Vreme rezervacije</label>
+                  <input type="text" class="form-control"  id="vremeRezervacije" name="vremeRezervacije" placeholder="vremeRezervacije" required [(ngModel)] = "newRezervacija.vremeRezervacije">
+                </div>
+                <button   type="button" [disabled]="!formPredmet.valid" id="submit" name="submit" class="btn btn-primary pull-right" (click)="add()">Rezerviši</button>
+                <button type="button" id="submit" name="submit" (click)="goBack()">Odustani</button>   
+              </form>
+            </div>
+          </div>  
+        </div>
+        <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+    </div>
+  </div>
+</div>

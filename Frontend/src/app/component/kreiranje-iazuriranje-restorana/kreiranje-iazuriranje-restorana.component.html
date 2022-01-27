@@ -1,0 +1,33 @@
+<app-meni-bar></app-meni-bar>
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+      <div class="col col-lg-4 col-md-6 col-sm-10 col-10">
+        <div class="alert alert-light form">
+          <div class="form-area">  
+            <form role="form" #formPredmet="ngForm">
+              <h3 style="margin-bottom: 25px; text-align: center;">Restoran</h3>
+              <div class="form-group">
+                <label>Naziv restorana: </label>
+                <input type="text" class="form-control"  minlength="3"  maxlength="30" id="naziv" name="naziv" placeholder="Naziv restorana" required [(ngModel)] = "newRestoran.naziv">
+              </div>
+              <div class="form-group">
+                <label>Adresa restorana: </label>
+                <input type="text" class="form-control" minlength="3" maxlength="30" id="adresa" name="adresa" placeholder="Adresa restorana" required [(ngModel)] = "newRestoran.adresa">
+              </div>
+              <div class="form-group">
+                <label>Kontakt restorana: </label>
+                <input type="text" class="form-control"  minlength="3"  maxlength="30" id="kontakt" name="kontakt" placeholder="Kontakt restorana" required [(ngModel)] = "newRestoran.kontakt">
+              </div>
+              <button  *ngIf="postojiDugme" type="button" [disabled]="!formPredmet.valid" id="submit" name="submit" class="btn btn-success pull-right" (click)="add()">Dodaj</button>
+              <button *ngIf="!postojiDugme" type="button" [disabled]="!formPredmet.valid" id="submit" name="submit" class="btn btn-primary pull-right" (click)="update()">Azuriraj</button>
+              <button type="button" id="submit" name="submit" (click)="goBack() " class="btn btn-danger" >Odustani</button>
+            </form>
+          </div>
+        </div> 
+      </div>
+      <div class="col col-lg-4 col-md-3 col-sm-1 col-1"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.no-content-overlay {
+    opacity: 0.7;
+}
+
+.no-content {
+    height: 100vh;
+}
